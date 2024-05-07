@@ -80,7 +80,7 @@ function addDataToTable(params) {
 
   console.log(params);
 }
-window.addDataToTable = addDataToTable()
+window.addDataToTable = addDataToTable
 let rows = [
   {
     "BuildingName": "",
