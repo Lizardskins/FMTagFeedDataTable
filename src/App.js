@@ -89,7 +89,10 @@ export default function DataGridDemo() {
     // Map over the params array and update the _id property to id
     const updatedRows = params.map((row) => ({ ...row, id: row._id }));
     // Concatenate the updated rows with the existing rows
-    setRows((prevRows) => [...prevRows, ...updatedRows]);
+    setRows((prevRows) => [...updatedRows]);
+    if (dataGridRef.current) {
+      dataGridRef.current.api.resizeColumnsToFit();
+    }
   }
 
 
