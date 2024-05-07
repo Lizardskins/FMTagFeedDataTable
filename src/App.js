@@ -77,9 +77,10 @@ const columns = [
 ];
 
 function addDataToTable(params) {
+
   console.log(params);
 }
-
+window.addDataToTable = addDataToTable()
 let rows = [
   {
     "BuildingName": "",
