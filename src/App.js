@@ -75,60 +75,16 @@ const columns = [
     // width: 160,
   },
 ];
+let rows = [
 
+];
 function addDataToTable(params) {
 
   console.log(params);
+  rows = params
 }
 window.addDataToTable = addDataToTable
-let rows = [
-  {
-    "BuildingName": "",
-    "FloorName": "",
-    "HumidityPercent": 0,
-    "IRID": 0,
-    "LBIValue": 944,
-    "Probe1TempStatus": 0,
-    "Probe2TempStatus": 0,
-    "RSSI": -91,
-    "ReceivedStarID": 456,
-    "TemperatureProbe1": 0,
-    "TemperatureProbe2": 0,
-    "X": 0,
-    "Y": 0,
-    "_id": "6601e3297da4664207ccc3cb",
-    "buttons": "",
-    "inMotion": 0,
-    "lastSeenByMonitor": "2024-03-25T20:48:41.901Z",
-    "monitorId": 745610,
-    "monitorName": "5100-4-4410 NS 4",
-    "offline": false,
-    "reportTime": "2024-03-25T20:48:41.000Z",
-    "starName": "5150-LL2-Hallway by EVS Closet",
-    "tagid": 1479664
-  }, {
-    "BuildingName": "5150-Rehab",
-    "FloorName": "LL2",
-    "HumidityPercent": 0,
-    "IRID": 0,
-    "LBIValue": 890,
-    "Probe1TempStatus": 0,
-    "Probe2TempStatus": 0,
-    "RSSI": -128,
-    "ReceivedStarID": 100,
-    "TemperatureProbe1": 0,
-    "TemperatureProbe2": 0,
-    "X": 64.8000030517578,
-    "Y": 66.6999969482422,
-    "_id": "6601e30f7da4664207ccb326",
-    "buttons": "",
-    "inMotion": 0,
-    "offline": false,
-    "reportTime": "2024-03-25T20:48:12.000Z",
-    "starName": "Wi-Fi",
-    "tagid": 1479664
-  }
-];
+
 
 export default function DataGridDemo() {
   return (
