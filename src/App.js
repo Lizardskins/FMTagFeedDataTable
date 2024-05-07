@@ -2,6 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 
+
 const columns = [
   { field: '_id', headerName: 'ID', hide: true },
   {
@@ -75,20 +76,26 @@ const columns = [
     // width: 160,
   },
 ];
-let rows = [
-
-];
-function addDataToTable(params) {
-
-  console.log(params);
-  rows = params
-}
-window.addDataToTable = addDataToTable
 
 
 export default function DataGridDemo() {
+
+  const [rows, setRows] = React.useState([]);
+  const dataGridRef = React.useRef(null);
+
+  function addDataToTable(params) {
+    console.log(params);
+    params = JSON.parse(params);
+    // Map over the params array and update the _id property to id
+    const updatedRows = params.map((row) => ({ ...row, id: row._id }));
+    // Concatenate the updated rows with the existing rows
+    setRows((prevRows) => [...prevRows, ...updatedRows]);
+  }
+
+
+  window.addDataToTable = addDataToTable
   return (
-    <Box sx={{ height: 600, width: '100%', overflow: 'hidden' }}>
+    <Box sx={{ height: 550, width: '100%', overflow: 'hidden' }}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -112,6 +119,7 @@ export default function DataGridDemo() {
         }}
         pageSizeOptions={[100]}
         disableRowSelectionOnClick
+        ref={dataGridRef}
       />
     </Box>
   );
